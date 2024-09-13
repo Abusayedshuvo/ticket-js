@@ -1,0 +1,15 @@
+body {
+  font-family: "Poppins", system-ui;
+}
+
+.seat {
+  background-color: #f7f8f8;
+  border-radius: 12px;
+  width: 110px;
+  height: 56px;
+  text-align: center;
+  line-height: 55px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+}
