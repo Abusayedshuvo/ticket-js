@@ -21,7 +21,7 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assest/style.css" />
   </head>
   <body>
     <div class="container xl:w-2/3 mx-auto mt-10">
@@ -100,13 +100,13 @@
                   />
                 </svg>
 
-                <p>40 Seats left</p>
+                <p><span id="available-seat">40</span> Seats left</p>
               </div>
             </div>
           </div>
           <div class="col-span-3 my-auto">
             <div class="border-l-8 border-dotted pl-10">
-              <p class="text-4xl font-bold">550 Taka</p>
+              <p class="text-3xl font-bold">550 Taka</p>
               <p class="text-lg">Per Seat</p>
             </div>
           </div>
@@ -115,7 +115,7 @@
 
       <!-- select seat area -->
       <div class="container xl:w-3/4 mx-auto mt-20 bg-white p-5 rounded-xl">
-        <div class="grid grid-cols-12">
+        <div class="grid grid-cols-12 gap-6">
           <div class="col-span-7">
             <p class="text-2xl mb-5 font-semibold">Select Your Seat</p>
             <hr />
@@ -197,12 +197,20 @@
             <div class="flex justify-between">
               <div class="flex gap-3">
                 <span class="p-4">A</span>
-                <span class="seat">A1</span>
-                <span class="seat">A2</span>
+                <button onclick="seatClick('a1')" id="a1" class="seat">
+                  A1
+                </button>
+                <button onclick="seatClick('a2')" id="a2" class="seat">
+                  A2
+                </button>
               </div>
               <div class="flex gap-3">
-                <span class="seat">A3</span>
-                <span class="seat">A4</span>
+                <button onclick="seatClick('a3')" id="a3" class="seat">
+                  A3
+                </button>
+                <button onclick="seatClick('a4')" id="a4" class="seat">
+                  A4
+                </button>
               </div>
             </div>
             <!-- B seat -->
@@ -218,11 +226,39 @@
               </div>
             </div>
           </div>
-          <div class="col-span-5">
-            <p class="text-lg">Select Your Seat</p>
+          <!-- Select Your Seat -->
+          <div class="col-span-5 border-l border-dashed">
+            <div class="pl-5">
+              <p class="text-2xl font-semibold mb-5">Select Your Seat</p>
+              <hr />
+              <table class="table">
+                <thead>
+                  <th>
+                    Seat
+                    <span
+                      id="seat-count"
+                      class="bg-[#1DD100] text-white px-2 py-0 rounded-md"
+                      >0</span
+                    >
+                  </th>
+                  <th>Class</th>
+                  <th>Price</th>
+                </thead>
+                <tbody id="seat-table"></tbody>
+              </table>
+              <hr />
+              <div class="flex justify-between mt-3">
+                <p class="font-semibold">Total Price</p>
+                <p class="font-semibold">
+                  BDT <span id="total-price">00</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="assest/utili.js"></script>
+    <script src="assest/script.js"></script>
   </body>
 </html>
