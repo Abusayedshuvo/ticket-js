@@ -48,7 +48,7 @@
               <p>use by January 2024</p>
             </div>
             <div>
-              <p class="text-2xl font-semibold">Couple 20</p>
+              <p class="text-2xl font-semibold">Couple20</p>
               <p>Coupon Code</p>
             </div>
           </div>
@@ -193,36 +193,46 @@
               </div>
             </div>
             <!-- seat number   -->
-            <!-- A seat -->
-            <div class="flex justify-between">
-              <div class="flex gap-3">
-                <span class="p-4">A</span>
-                <button onclick="seatClick('a1')" id="a1" class="seat">
-                  A1
-                </button>
-                <button onclick="seatClick('a2')" id="a2" class="seat">
-                  A2
-                </button>
+            <div id="all-seat">
+              <!-- A seat -->
+              <div class="flex justify-between">
+                <div class="flex gap-3">
+                  <span class="p-4">A</span>
+                  <button onclick="seatClick('a1')" id="a1" class="seat">
+                    A1
+                  </button>
+                  <button onclick="seatClick('a2')" id="a2" class="seat">
+                    A2
+                  </button>
+                </div>
+                <div class="flex gap-3">
+                  <button onclick="seatClick('a3')" id="a3" class="seat">
+                    A3
+                  </button>
+                  <button onclick="seatClick('a4')" id="a4" class="seat">
+                    A4
+                  </button>
+                </div>
               </div>
-              <div class="flex gap-3">
-                <button onclick="seatClick('a3')" id="a3" class="seat">
-                  A3
-                </button>
-                <button onclick="seatClick('a4')" id="a4" class="seat">
-                  A4
-                </button>
-              </div>
-            </div>
-            <!-- B seat -->
-            <div class="flex justify-between mt-5">
-              <div class="flex gap-3">
-                <span class="p-4">B</span>
-                <span class="seat">B1</span>
-                <span class="seat">B2</span>
-              </div>
-              <div class="flex gap-3">
-                <span class="seat">B3</span>
-                <span class="seat">B4</span>
+              <!-- B seat -->
+              <div class="flex justify-between mt-5">
+                <div class="flex gap-3">
+                  <span class="p-4">B</span>
+                  <button onclick="seatClick('b1')" id="b1" class="seat">
+                    B1
+                  </button>
+                  <button onclick="seatClick('b2')" id="b2" class="seat">
+                    B2
+                  </button>
+                </div>
+                <div class="flex gap-3">
+                  <button onclick="seatClick('b3')" id="b3" class="seat">
+                    B3
+                  </button>
+                  <button onclick="seatClick('b4')" id="b4" class="seat">
+                    B4
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -242,7 +252,7 @@
                     >
                   </th>
                   <th>Class</th>
-                  <th>Price</th>
+                  <th class="text-right">Price</th>
                 </thead>
                 <tbody id="seat-table"></tbody>
               </table>
@@ -252,6 +262,28 @@
                 <p class="font-semibold">
                   BDT <span id="total-price">00</span>
                 </p>
+              </div>
+              <!-- Couple code -->
+              <div id="copupon-box" class="mt-4">
+                <input
+                  id="copupon-input"
+                  class="p-3 border w-8/12"
+                  type="text"
+                  placeholder="Have any copupon?"
+                />
+                <button
+                  id="apply-btn"
+                  disabled
+                  class="bg-[#1DD100] rounded-lg text-white px-10 py-3 disabled:bg-slate-300"
+                >
+                  Apply
+                </button>
+              </div>
+              <div class="mt-5">
+                <div class="flex justify-between">
+                  <span class="font-semibold">Grand Total</span>
+                  <span>BDT <span id="grand-total">00</span></span>
+                </div>
               </div>
             </div>
           </div>
