@@ -36,12 +36,26 @@ function copupon(uniqueSeat) {
   applyBtn.addEventListener("click", function () {
     const copuponInput = document.getElementById("copupon-input").value;
     const totalPrice = getTextById("total-price");
-    let grandTotal = 0;
+    const copuponBox = document.getElementById("copupon-box");
+    let grandTotal = totalPrice;
     if (copuponInput === "NEW15") {
       grandTotal = totalPrice - totalPrice * 0.15;
+      copuponBox.classList.add("hidden");
     } else if (copuponInput === "Couple20") {
       grandTotal = totalPrice - totalPrice * 0.2;
+      copuponBox.classList.add("hidden");
     }
     setTextById("grand-total", grandTotal);
   });
+}
+
+// alert and disabled button function
+function alertAndDisabled(uniqueSeat) {
+  if (uniqueSeat.length >= 4) {
+    alert("you can't buy more than 4 ticket");
+    const allButton = document.querySelectorAll("#all-seat button");
+    for (let i of allButton) {
+      i.setAttribute("disabled", true);
+    }
+  }
 }
